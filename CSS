@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Gift</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ouvre ton cadeau !</h1>
+        <div class="envelopes">
+            <div class="envelope" onclick="openEnvelope(1)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift1.jpg" alt="Cadeau 1">
+                    <p>Un magnifique voyage à Paris !</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(2)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift2.jpg" alt="Cadeau 2">
+                    <p>Un dîner étoilé pour deux.</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(3)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift3.jpg" alt="Cadeau 3">
+                    <p>Un massage relaxant.</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(4)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift4.jpg" alt="Cadeau 4">
+                    <p>Une montre élégante.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+10 h 46
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+h1 {
+    color: #004494; /* Синій колір La Poste */
+}
+.container {
+    margin-top: 50px;
+}
+.envelopes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.envelope {
+    width: 150px;
+    height: 100px;
+    background: #FFD700; /* Жовтий колір La Poste */
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+.envelope:hover {
+    transform: scale(1.1);
+}
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #004494;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transition: transform 0.5s;
+}
+.letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 80px;
+    background: white;
+    transform: translate(-50%, -50%) translateY(100%);
+    transition: transform 0.5s;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+.letter img {
+    width: 100%;
+    border-radius: 3px;
+}
+.letter p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #333;
+}
+/* Коли конверт відкривається */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+.envelope.open .letter {
+    transform: translate(-50%, -50%) translateY(0);
+}
