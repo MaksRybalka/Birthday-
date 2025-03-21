@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Gift</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ouvre ton cadeau !</h1>
+        <div class="envelopes">
+            <div class="envelope" onclick="openEnvelope(1)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift1.jpg" alt="Cadeau 1">
+                    <p>Un magnifique voyage à Paris !</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(2)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift2.jpg" alt="Cadeau 2">
+                    <p>Un dîner étoilé pour deux.</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(3)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift3.jpg" alt="Cadeau 3">
+                    <p>Un massage relaxant.</p>
+                </div>
+            </div>
+            <div class="envelope" onclick="openEnvelope(4)">
+                <div class="flap"></div>
+                <div class="letter">
+                    <img src="gift4.jpg" alt="Cadeau 4">
+                    <p>Une montre élégante.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
