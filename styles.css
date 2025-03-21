@@ -54,30 +54,34 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
 }
 h1 {
-    color: #004494; /* Синій колір La Poste */
+    color: #004494; /* Синій La Poste */
+    margin-top: 20px;
 }
 .container {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .envelopes {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px; /* Більший пробіл між конвертами */
 }
 .envelope {
     width: 150px;
     height: 100px;
-    background: #FFD700; /* Жовтий колір La Poste */
+    background: #FFD700; /* Жовтий La Poste */
     position: relative;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s;
+    overflow: hidden; /* Ховає вміст всередині */
 }
 .envelope:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .flap {
     position: absolute;
@@ -88,6 +92,7 @@ h1 {
     background: #004494;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     transition: transform 0.5s;
+    z-index: 2; /* Флап має бути зверху */
 }
 .letter {
     position: absolute;
@@ -101,6 +106,7 @@ h1 {
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
+    z-index: 1; /* Лист під конвертом */
 }
 .letter img {
     width: 100%;
@@ -111,10 +117,12 @@ h1 {
     margin-top: 5px;
     color: #333;
 }
-/* Коли конверт відкривається */
+/* Анімація відкриття */
 .envelope.open .flap {
     transform: rotateX(180deg);
+    z-index: 1; /* Опускаємо flap, щоб лист виїжджав */
 }
 .envelope.open .letter {
     transform: translate(-50%, -50%) translateY(0);
+    z-index: 2; /* Тепер лист зверху */
 }
